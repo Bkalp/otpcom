@@ -1,15 +1,20 @@
 <?php
 
-$host = "j1r4n2ztuwm0bhh5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";  // JawsDB host
-$user = "pus4ul2z8ecrb7xr";  // JawsDB username
-$pass = "lsgtt5r0qemz08as";  // JawsDB password
-$db = "fty3z6xrj7wtkeko";    // JawsDB database name
+// Database connection details
+$host = "your_db";   // MySQL Host Name from your panel
+$user = "your_db";              // MySQL Username from your panel
+$pass = "your_db";                 // MySQL Password from your panel
+$db = "your_db";    // MySQL Database Name from your panel
 
+// Create connection
 $conn = new mysqli($host, $user, $pass, $db);
 
+// Check connection
 if ($conn->connect_error) {
-    die("Failed to connect DB: " . $conn->connect_error);
-} else {
-    echo "Connected successfully to JawsDB!";
+    die("Failed to connect to DB: " . $conn->connect_error);
 }
+
+
+//echo "Database connection successful!";
+
 ?>

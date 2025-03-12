@@ -10,12 +10,12 @@ if (!isset($_SESSION['email'])) {
     exit();
 }
 
-// Database connection using JAWSDB credentials from Heroku
-$servername = "j1r4n2ztuwm0bhh5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
-$username = "pus4ul2z8ecrb7xr";  // Your JAWSDB username
-$password = "lsgtt5r0qemz08as";  // Your JAWSDB password
-$dbname = "fty3z6xrj7wtkeko";    // Your JAWSDB database name
-$port = 3306;  // Default MySQL port
+// Database connection using db credentials from Heroku
+$servername = "your_db";
+$username = "your_db";  // Your db username
+$password = "your_db";  // Your db password
+$dbname = "your_db";    // Your db database name
+$port = your_db;  // Default db port
 
 $conn = new mysqli($servername, $username, $password, $dbname, $port);
 
@@ -25,9 +25,9 @@ if ($conn->connect_error) {
 }
 
 // Now you are connected to your JAWSDB database!
-?>
 
-// Handle form submission for reviews
+
+ //Handle form submission for reviews
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $conn->real_escape_string($_POST['name']);
     $review = $conn->real_escape_string($_POST['review']);
@@ -52,6 +52,7 @@ if ($result->num_rows > 0) {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
